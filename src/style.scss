@@ -1,0 +1,48 @@
+@import './nullstyle.scss';
+
+$white: #FFFFFF;
+$blue: #1F49DA;
+$red: #E12F2F;
+
+$diamond_width: 30vw;
+$diamond_height: 22vw;
+
+$font_name: 'Lexend';
+$font_size: $diamond_height/3;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: $white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+
+  &._active {
+    background-color: $blue;
+  }
+}
+
+.diamond {
+  width: $diamond_width;
+  height: $diamond_height;
+  background-color: $red;
+  clip-path: polygon(50% 100%, 100% 35%, 75% 0, 25% 0, 0 35%);
+  position: relative;
+  cursor: pointer;
+}
+
+.diamond__text {
+  position: absolute;
+  top: $diamond_height/4;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  font-family: $font_name;
+  font-size: $font_size;
+  line-height: 1;
+  color: $white;
+}
